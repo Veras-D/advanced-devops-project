@@ -1,82 +1,149 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Lab - Maria Lazara</title>
+    <title>Vivi Veras - DevOps Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <h1 class="nav-title">🚀 DevOps Lab</h1>
-                <div class="nav-menu">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#about" class="nav-link">Sobre</a>
-                    <a href="#docker" class="nav-link">Docker</a>
-                    <a href="#aws" class="nav-link">AWS</a>
-                </div>
-            </div>
-        </nav>
+        <div class="container">
+            <h1>Vivi Veras</h1>
+            <p>Full-Stack Engineer</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="https://dveras2310@gmail.com">Email</a></li>
+                    <li><a href="https://github.com/ViviVeras">GitHub</a></li>
+                    <li><a href="https://linkedin.com/in/ViviVeras">LinkedIn</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <h1 class="hero-title">Parabéns! Você subiu o site!</h1>
-                <p class="hero-subtitle">Aprendendo DevOps com Docker e deploy na AWS</p>
-                <div class="hero-buttons">
-                    <button class="btn primary" onclick="showStatus()">Status do Container</button>
-                    <button class="btn secondary" onclick="showInfo()">Informações</button>
+        <section id="about" class="container">
+            <h2>About Me</h2>
+            <p>3+ years of hands-on experience in building scalable web applications using React, TypeScript, Node.js, Python, and DevOps tools such as Docker, AWS, Kubernetes, Terraform and Pulumi. Committed about writing clean, maintainable code and improving system reliability through automation and testing. Seeking to drive innovation and performance in dynamic engineering environments.</p>
+        </section>
+
+        <section id="skills" class="container">
+            <h2>Core Skills</h2>
+            <div class="skills-grid">
+                <div>
+                    <h3>Languages & Frameworks</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>TypeScript</li>
+                        <li>React</li>
+                        <li>Node.js</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Databases & ORMs</h3>
+                    <ul>
+                        <li>PostgreSQL</li>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                        <li>PrismaORM</li>
+                        <li>Redis</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>DevOps & Cloud</h3>
+                    <ul>
+                        <li>Docker</li>
+                        <li>AWS</li>
+                        <li>Kubernetes</li>
+                        <li>Terraform</li>
+                        <li>Pulumi</li>
+                        <li>Git</li>
+                        <li>GitHub Actions</li>
+                        <li>Linux</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Tools & Methodologies</h3>
+                    <ul>
+                        <li>JIRA</li>
+                        <li>OOP</li>
+                        <li>JWT</li>
+                        <li>OAuth</li>
+                        <li>Cypress</li>
+                        <li>Scrum</li>
+                        <li>Jest</li>
+                        <li>Figma</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="section">
-            <div class="container">
-                <h2>🎯 Objetivo do Laboratório</h2>
-                <div class="card-grid">
-                    <div class="card">
-                        <h3>🐳 Docker</h3>
-                        <p>Containerização da aplicação para garantir portabilidade e isolamento</p>
-                    </div>
-                    <div class="card">
-                        <h3>☁️ AWS ECR</h3>
-                        <p>Gerenciamento seguro de imagens Docker na nuvem</p>
-                    </div>
-                    <div class="card">
-                        <h3>🖥️ EC2</h3>
-                        <p>Deploy manual da aplicação em instância virtual na AWS</p>
-                    </div>
-                </div>
+        <section id="experience" class="container">
+            <h2>Experience</h2>
+
+            <div class="job-entry">
+                <h3>Full-Stack Engineer | GX4 Software</h3>
+                <p class="date">Jun 2024 – Present</p>
+                <ul>
+                    <li>Developed and maintained scalable web applications using NextJS, I18N, TypeScript, TailwindCSS, and Testing Library.</li>
+                    <li>Built RESTful APIs with ExpressJS and Spring Boot, integrating PostgreSQL and MongoDB for reliable data storage, reducing data retrieval time by 40% using PrismaORM and Redis.</li>
+                    <li>Streamlined CI/CD pipelines with Docker and AWS, reducing deployment errors by 30%.</li>
+                    <li>Collaborated with cross-functional teams to deliver new features under agile methodologies, ensuring code quality through unit and integration testing.</li>
+                </ul>
+            </div>
+
+            <div class="job-entry">
+                <h3>Programmer Team Manager | APAM (NGO)</h3>
+                <p class="date">Aug 2023 – Jul 2024</p>
+                <ul>
+                    <li>Led a volunteer team of 5 developers to deliver a full-stack application using React, Python, and MySQL.</li>
+                    <li>Architected the platform's backend and infrastructure, implementing CI/CD with GitHub Actions, reducing release cycle time by 40%.</li>
+                    <li>Used GitHub Projects and JIRA to manage agile workflows and ensure team alignment.</li>
+                    <li>Facilitated code reviews and mentoring sessions to ensure knowledge sharing and maintain code quality, reducing bug rate in production by 30%.</li>
+                </ul>
+            </div>
+
+            <div class="job-entry">
+                <h3>Undergraduate Researcher | LESC, UEMA</h3>
+                <p class="date">Jul 2022 – Sep 2023</p>
+                <ul>
+                    <li>Designed and implemented responsive UI components using JavaScript, and Figma for academic tools.</li>
+                    <li>Automated research workflows with Python, including web scraping and report generation, saving over 6 hours weekly.</li>
+                    <li>Developed machine learning models with scikit-learn and Keras, contributing to two peer-reviewed publications.</li>
+                    <li>Collaborated closely with professors and researchers to support data-driven studies.</li>
+                </ul>
             </div>
         </section>
 
-        <section id="status" class="section">
-            <div class="container">
-                <h2>📊 Status do Sistema</h2>
-                <div class="status-grid">
-                    <div class="status-item">
-                        <span class="status-label">Container:</span>
-                        <span class="status-value active" id="container-status">Ativo</span>
-                    </div>
-                    <div class="status-item">
-                        <span class="status-label">Servidor:</span>
-                        <span class="status-value active" id="server-status">Nginx Rodando</span>
-                    </div>
-                    <div class="status-item">
-                        <span class="status-label">Ambiente:</span>
-                        <span class="status-value" id="environment">AWS EC2</span>
-                    </div>
-                </div>
+        <section id="education" class="container">
+            <h2>Education</h2>
+            <div class="education-entry">
+                <h3>Recode Pro — Full-Stack Development Program</h3>
+                <p class="date">2024-2025</p>
+                <p>Technologies: HTML5, CSS3, Bootstrap, ReactJS, Java, Spring Boot, MySQL, MongoDB, Docker</p>
             </div>
+        </section>
+
+        <section id="languages" class="container">
+            <h2>Languages</h2>
+            <ul>
+                <li>Portuguese (Native)</li>
+                <li>English (B2-C1)</li>
+            </ul>
         </section>
     </main>
 
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <p>&copy; 2025 Maria Lazara - DevOps - Aprendendo na prática</p>
+            <p>&copy; 2025 Vivi Veras. All rights reserved.</p>
         </div>
     </footer>
 
