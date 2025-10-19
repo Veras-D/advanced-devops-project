@@ -27,7 +27,7 @@ data "aws_ami" "latest_amazon_linux" {
 
 resource "aws_key_pair" "ssh_key" {
   key_name   = "ssh_key"
-  public_key = file("~/.ssh/id_rsa.pub")
+  public_key = file(pathexpand("~/.ssh/id_rsa.pub"))
 }
 
 resource "aws_security_group" "website_sg" {
