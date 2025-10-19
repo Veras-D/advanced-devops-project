@@ -1,5 +1,5 @@
 resource "aws_instance" "ec2_prod" {
-  ami                    = "ami-0b016c703b95ecbe4"
+  ami                    = data.aws_ami.latest_amozon_linux.id
   instance_type          = "t2.micro"
   key_name               = aws_key_pair.ssh_key.key_name
   vpc_security_group_ids = [aws_security_group.website_sg.id]
@@ -7,6 +7,21 @@ resource "aws_instance" "ec2_prod" {
   tags = {
     Name        = "ec2_prod"
     provisioner = "Terraform"
+  }
+}
+
+data "aws_ami" "latest_amozon_linux" {
+  most_recent = true
+  owners = [ "amazon" ]
+
+  filter {
+    name = "name"
+    values = ["al2023-ami-*-kernel-6.1-x86_64"]
+  }
+
+  filter {
+    name = "name"
+    values = [ "hvm" ]
   }
 }
 
