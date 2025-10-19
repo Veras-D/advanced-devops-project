@@ -17,7 +17,6 @@ resource "aws_key_pair" "ssh_key" {
 
 resource "aws_security_group" "website_sg" {
   name   = "website-sg"
-  vpc_id = "vpc-0ff60a695425883cf"
 
   tags = {
     Name        = "website-sg"
