@@ -1,0 +1,65 @@
+name: Terraform CI/CD
+
+on:
+    workflow_dispatch:
+        inputs:
+            apply:
+                description: 'Execute terraform apply?'
+                required: true
+                default: 'false'
+                type: choice
+                options:
+                    - 'true'
+                    - 'false'
+
+            destroy:
+                description: 'Destroy environment?'
+                required: true
+                default: 'false'
+                type: choice
+                options:
+                    - 'true'
+                    - 'false'
+
+permissions:
+    id-token: write
+    contents: read
+
+jobs:
+    terraform:
+        name: Terraform
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v5.0.0
+
+            - name: "Configure AWS Credentials"
+              uses: aws-actions/configure-aws-credentials@v4.3.1
+              with:
+                role-to-assume: arn:aws:iam::123456789012:role/GitHubActionsTerraformRole
+                aws-region: us-east-1
+
+            - name: HashiCorp - SetUp Terraform
+              uses: hashicorp/setup-terraform@v3.1.2
+
+            - name: Terraform Init
+              run: terraform init
+
+            - name: Terraform Validate
+              run: terraform validate
+
+            - name: Terraform Plan
+              run: terraform plan -out=tfplan
+              env:
+                TF_VAR_ip_address: ${{ secrets.SSH_IP_ADDRESS }}
+
+            - name: Terraform Apply
+              if: github.event.inputs.apply == 'true'
+              run: terraform apply -auto-approve tfplan
+
+            - name: Terraform Destroy
+              if: github.event.inputs.destroy == 'true'
+              run: terraform destroy -auto-approve
+              env:
+                TF_VAR_ip_address: ${{ secrets.SSH_IP_ADDRESS }}
