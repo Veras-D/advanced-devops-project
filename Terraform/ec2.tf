@@ -1,5 +1,5 @@
 resource "aws_instance" "ec2_prod" {
-  ami                    = data.aws_ami.latest_amozon_linux.id
+  ami                    = data.aws_ami.latest_amazon_linux.id
   instance_type          = "t2.micro"
   key_name               = aws_key_pair.ssh_key.key_name
   vpc_security_group_ids = [aws_security_group.website_sg.id]
@@ -10,18 +10,18 @@ resource "aws_instance" "ec2_prod" {
   }
 }
 
-data "aws_ami" "latest_amozon_linux" {
+data "aws_ami" "latest_amazon_linux" {
   most_recent = true
-  owners = [ "amazon" ]
+  owners      = ["amazon"]
 
   filter {
-    name = "name"
+    name   = "name"
     values = ["al2023-ami-*-kernel-6.1-x86_64"]
   }
 
   filter {
-    name = "name"
-    values = [ "hvm" ]
+    name   = "virtualization-type"
+    values = ["hvm"]
   }
 }
 
@@ -31,7 +31,7 @@ resource "aws_key_pair" "ssh_key" {
 }
 
 resource "aws_security_group" "website_sg" {
-  name   = "website-sg"
+  name = "website-sg"
 
   tags = {
     Name        = "website-sg"
