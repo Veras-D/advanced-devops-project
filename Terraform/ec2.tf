@@ -4,6 +4,7 @@ resource "aws_instance" "ec2_prod" {
   key_name               = aws_key_pair.ssh_key.key_name
   vpc_security_group_ids = [aws_security_group.website_sg.id]
   iam_instance_profile   = aws_iam_instance_profile.ec2_instance_profile.name
+  user_data              = file("user_data.sh")
 
   tags = {
     Name        = "ec2_prod"
