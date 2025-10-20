@@ -15,6 +15,14 @@ The project uses Terraform to provision the necessary AWS infrastructure, includ
 - **Tag-Based Releases:** The deployment pipeline is triggered by pushing new version tags (e.g., `v1.0.0`).
 - **OIDC Authentication:** GitHub Actions securely authenticate with AWS using OpenID Connect.
 
+## Architecture
+
+The diagram below illustrates the CI/CD pipeline for this project.
+
+<p align="center">
+  <img src="https://i.imgur.com/eXH0JvV.png" alt="Architecture Diagram" width="40%"/>
+</p>
+
 ## Prerequisites
 
 Before you begin, ensure you have the following:
